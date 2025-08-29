@@ -1,3 +1,21 @@
+server:
+  port: 8081
+
 spring:
-  profiles:
-    active: test
+  application:
+    name: Bebka-Spring
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/bebka
+    driver-class-name: org.postgresql.Driver
+    username: postgres
+    password: A12t39600
+
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+    hibernate:
+      ddl-auto: update
+      show-sql: true
