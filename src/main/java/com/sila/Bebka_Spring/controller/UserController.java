@@ -20,7 +20,7 @@ public class UserController {
     public UserDto createUser(@RequestBody UserDto userDto) {
         return userService.createUserFromDto(userDto);
     }
-    @GetMapping
+    @GetMapping("/all")
     public List<UserDto> getAllUsers() {
         return userService.getAllUsers();
     }
