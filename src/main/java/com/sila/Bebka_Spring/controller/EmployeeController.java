@@ -47,5 +47,14 @@ public class EmployeeController {
     public List<Employee> searchByName(@RequestParam String name) {
         return employeeService.searchByName(name);
     }
+    @GetMapping("/salary")
+    public List<Employee> getEmployeesWithHighSalary(@RequestParam Double amount) {
+        return employeeService.getEmployeesWithSalaryGreaterThan(amount);
+    }
+    @GetMapping("/department")
+    public List<Employee> getEmployeesByDepartment(@RequestParam String dept) {
+        return employeeService.getEmployeesByDepartment(dept);
+    }
+
 
 }

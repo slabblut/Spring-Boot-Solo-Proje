@@ -12,6 +12,7 @@ public class EmployeeService {
     private final EmployeeRepository employeeRepository;
 
     public EmployeeService(EmployeeRepository employeeRepository) {
+
         this.employeeRepository = employeeRepository;
     }
 
@@ -49,6 +50,13 @@ public class EmployeeService {
     public List<Employee> searchByName(String name) {
         return employeeRepository.findByNameContaining(name);
     }
+    public List<Employee> getEmployeesWithSalaryGreaterThan(Double amount) {
+        return employeeRepository.findEmployeesWithSalaryGreaterThan(amount);
+    }
+    public List<Employee> getEmployeesByDepartment(String dept) {
+        return employeeRepository.findEmployeesByDepartmentNative(dept);
+    }
+
 
 
 
