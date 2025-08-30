@@ -1,6 +1,7 @@
 package com.sila.Bebka_Spring.controller;
 
 import com.sila.Bebka_Spring.model.Employee;
+import com.sila.Bebka_Spring.repository.EmployeeRepository;
 import com.sila.Bebka_Spring.service.EmployeeService;
 import org.springframework.web.bind.annotation.*;
 
@@ -41,4 +42,10 @@ public class EmployeeController {
     public void deleteEmployee(@PathVariable Long id) {
         employeeService.deleteEmployee(id);
     }
+
+    @GetMapping("/search/by-name")
+    public List<Employee> searchByName(@RequestParam String name) {
+        return employeeService.searchByName(name);
+    }
+
 }
